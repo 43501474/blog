@@ -7,9 +7,13 @@ comments: false
 
 > created_date: 2020-04-22T06:45:22+08:00
 
-> update_date: 2020-07-12T04:32:48+08:00
+> update_date: 2020-07-12T05:36:08+08:00
 
 > comment_url: https://github.com/ferstar/blog/issues/19
+
+装黑苹果了，香。。。
+
+---
 
 > 给老古董x220装了个Manjaro，顺路记录一下安装完成之后大概的配置过程
 
