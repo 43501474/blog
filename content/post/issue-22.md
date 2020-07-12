@@ -7,7 +7,7 @@ comments: false
 
 > created_date: 2020-07-12T04:50:33+08:00
 
-> update_date: 2020-07-12T04:50:53+08:00
+> update_date: 2020-07-12T05:01:35+08:00
 
 > comment_url: https://github.com/ferstar/blog/issues/22
 
@@ -26,3 +26,4 @@ comments: false
 
 ![image](https://user-images.githubusercontent.com/2854276/87239143-30904880-c43e-11ea-85f3-350dc2d398c1.png)
 
+EFI链接`亲测最高可支持到10.15.5`：https://github.com/ferstar/blog/files/4908021/EFI_X220.zip
