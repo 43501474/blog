@@ -1,13 +1,13 @@
 ---
 title: "ThinkPad X220 装黑苹果小记"
 date: "2020-07-12T04:50:33+08:00"
-tags: ['TODO', 'macOS']
+tags: ['macOS']
 comments: false
 ---
 
 > created_date: 2020-07-12T04:50:33+08:00
 
-> update_date: 2020-07-12T05:01:35+08:00
+> update_date: 2020-07-12T05:01:46+08:00
 
 > comment_url: https://github.com/ferstar/blog/issues/22
 
