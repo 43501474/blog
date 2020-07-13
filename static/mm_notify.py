@@ -6,7 +6,9 @@ import requests
 user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'
 team_id = os.getenv('TEAM_ID')
 mm_host = os.getenv('MM_HOST')
-sc_key = os.getenv('SC_KEY')
+# sc_key = os.getenv('SC_KEY')
+alert_from = os.getenv('ALERT_FROM')
+alert_to = os.getenv('ALERT_TO')
 
 
 def http_get(url, cookie):
@@ -42,7 +44,16 @@ def mention_count(cookie):
 
 
 def send_notify(title, msg):
-    requests.get('https://sc.ftqq.com/{}.send?text={}&desp={}'.format(sc_key, title, msg))
+    # requests.get('https://sc.ftqq.com/{}.send?text={}&desp={}'.format(sc_key, title, msg))
+    requests.post(
+        "https://api.alertover.com/v1/alert",
+        data={
+            "source": alert_from,
+            "receiver": alert_to,
+            "content": msg,
+            "title": title
+        }
+    )
 
 
 def main(cookie):
