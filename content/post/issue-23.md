@@ -1,13 +1,13 @@
 ---
 title: "利用GitHub Actions拯救MatterMost安卓客户端坑爹的消息推送"
 date: "2020-07-13T15:37:46+08:00"
-tags: ['Default']
+tags: ['Idea', 'Linux', 'Python']
 comments: false
 ---
 
 > created_date: 2020-07-13T15:37:46+08:00
 
-> update_date: 2020-07-13T15:37:46+08:00
+> update_date: 2020-07-13T15:38:08+08:00
 
 > comment_url: https://github.com/ferstar/blog/issues/23
 
