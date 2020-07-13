@@ -20,3 +20,5 @@ jobs:
           SC_KEY: ${{ secrets.SC_KEY }}
           TEAM_ID: ${{ secrets.TEAM_ID }}
           MM_COOKIE: ${{ secrets.MM_COOKIE }}
+          ALERT_FROM: ${{ secrets.ALERT_FROM }}
+          ALERT_TO: ${{ secrets.ALERT_TO }}
