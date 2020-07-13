@@ -41,18 +41,6 @@ def mention_count(cookie):
     return count
 
 
-def alert_over(title, msg):
-    requests.post(
-        "https://api.alertover.com/v1/alert",
-        data={
-            "source": "s-982cb767-729e-4781-9cee-320df6ec",
-            "receiver": "u-22103424-d52a-44d0-9408-c0f0c508",
-            "content": msg,
-            "title": title
-        }
-    )
-
-
 def send_notify(title, msg):
     requests.get('https://sc.ftqq.com/{}.send?text={}&desp={}'.format(sc_key, title, msg))
 
