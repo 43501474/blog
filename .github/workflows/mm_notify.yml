@@ -14,9 +14,9 @@ jobs:
         with:
           packages: requests
       - name: Run script
-        run: python3 scripts/mm_notify.py
+        run: python3 static/mm_notify.py
         env:
-          MM_INCOME: ${{ secrets.MM_HOST }}
+          MM_HOST: ${{ secrets.MM_HOST }}
           SC_KEY: ${{ secrets.SC_KEY }}
           TEAM_ID: ${{ secrets.TEAM_ID }}
           MM_COOKIE: ${{ secrets.MM_COOKIE }}
