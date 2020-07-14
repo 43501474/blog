@@ -20,8 +20,8 @@ class MSGCounter:
         self.p_msg_count = p_msg_count
 
     @property
-    def min_count(self):
-        return min(self.mention_count, self.p_msg_count)
+    def max_count(self):
+        return max(self.mention_count, self.p_msg_count)
 
     def __repr__(self):
         return 'Mentioned msg count: {}\nPrivate channel msg count: {}'.format(self.mention_count, self.p_msg_count)
@@ -79,7 +79,7 @@ def main():
     except Exception as exp:
         send_notify('Exception occurred, Maybe you should update your MM cookie', str(exp))
     else:
-        if counter.min_count > 0:
+        if counter.max_count > 0:
             send_notify('Unread Msg Notification from MM', str(counter))
 
 
