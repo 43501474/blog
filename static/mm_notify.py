@@ -9,9 +9,25 @@ mm_host = os.getenv('MM_HOST')
 # sc_key = os.getenv('SC_KEY')
 alert_from = os.getenv('ALERT_FROM')
 alert_to = os.getenv('ALERT_TO')
+mm_cookie = os.getenv('MM_COOKIE')
 
 
-def http_get(url, cookie):
+class MSGCounter:
+    __slots__ = ['mention_count', 'p_msg_count']
+
+    def __init__(self, mention_count=0, p_msg_count=0):
+        self.mention_count = mention_count
+        self.p_msg_count = p_msg_count
+
+    @property
+    def min_count(self):
+        return min(self.mention_count, self.p_msg_count)
+
+    def __repr__(self):
+        return 'Mentioned msg count: {}\nPrivate channel msg count: {}'.format(self.mention_count, self.p_msg_count)
+
+
+def http_get(url):
     headers = {
         'authority': mm_host.split('//')[1],
         'pragma': 'no-cache',
@@ -23,24 +39,25 @@ def http_get(url, cookie):
         'sec-fetch-site': 'same-origin',
         'sec-fetch-mode': 'cors',
         'sec-fetch-dest': 'empty',
-        'cookie': cookie,
+        'cookie': mm_cookie,
     }
     rsp = requests.get(url, headers=headers)
     if rsp.ok:
         return rsp.json()
 
 
-def mention_count(cookie):
-    count = 0
+def calc_msg_count():
+    counter = MSGCounter()
     url = '{}/api/v4/users/me/teams/unread'.format(mm_host)
-    for item in http_get(url, cookie):
-        count += item.get('mention_count', 0)
+    for item in http_get(url):
+        counter.mention_count += item.get('mention_count', 0)
     url = mm_host + '/api/v4/users/me/teams/{}/channels?include_deleted=false'.format(team_id)
-    for channel in http_get(url, cookie):
+    for channel in http_get(url):
         if channel.get('type') == 'P':  # private channel
             url = mm_host + '/api/v4/users/me/channels/{}/unread'.format(channel.get("id"))
-            count += http_get(url, cookie).get('mention_count', 0)
-    return count
+            counter.mention_count += http_get(url).get('mention_count', 0)
+            counter.p_msg_count += http_get(url).get('msg_count', 0)
+    return counter
 
 
 def send_notify(title, msg):
@@ -50,23 +67,21 @@ def send_notify(title, msg):
         data={
             "source": alert_from,
             "receiver": alert_to,
-            "content": msg,
-            "title": title
+            "title": title,
+            "content": msg
         }
     )
 
 
-def main(cookie):
+def main():
     try:
-        count = mention_count(cookie)
+        counter = calc_msg_count()
     except Exception as exp:
-        send_notify('Exception', str(exp))
+        send_notify('Exception occurred, Maybe you should update your MM cookie', str(exp))
     else:
-        if count > 0:
-            title = 'Notification from MM'
-            msg = 'You have {} unread msg(s)'.format(count)
-            send_notify(title, msg)
+        if counter.min_count > 0:
+            send_notify('Unread Msg Notification from MM', str(counter))
 
 
 if __name__ == '__main__':
-    main(os.getenv('MM_COOKIE'))
+    main()
