@@ -7,7 +7,7 @@ comments: false
 
 > created_date: 2020-07-12T04:50:33+08:00
 
-> update_date: 2020-07-13T11:19:40+08:00
+> update_date: 2020-07-15T00:09:20+08:00
 
 > comment_url: https://github.com/ferstar/blog/issues/22
 
@@ -27,5 +27,7 @@ comments: false
 ![image](https://user-images.githubusercontent.com/2854276/87239143-30904880-c43e-11ea-85f3-350dc2d398c1.png)
 
 因为用到的`Shades`调光软件是32位的，x220这块垃圾TN屏PWM调光，低亮度下闪瞎眼，只有靠这个软件才能活的样子，所以停留在Mojave养老了。
+
+升级路径：10.13.6 -> Mojave Patcher -> 10.14.6
 
 EFI链接`亲测最高可支持到10.15.5`：https://github.com/ferstar/blog/files/4908021/EFI_X220.zip
