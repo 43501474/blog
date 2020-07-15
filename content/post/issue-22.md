@@ -7,7 +7,7 @@ comments: false
 
 > created_date: 2020-07-12T04:50:33+08:00
 
-> update_date: 2020-07-15T00:12:51+08:00
+> update_date: 2020-07-15T00:20:36+08:00
 
 > comment_url: https://github.com/ferstar/blog/issues/22
 
@@ -33,3 +33,6 @@ comments: false
 EFI链接`亲测最高可支持到10.15.5，乞丐网卡驱动正常`：https://github.com/ferstar/blog/files/4908021/EFI_X220.zip
 
 其实最适合x220的macOS版本是10.12.x，各种完美，屏幕也不会有细线，更不用说冻屏啥的，然而一堆软件不支持，迫不得已上10.14.x。
+
+传一个`Shades`软件：
+[shades-intel.zip](https://github.com/ferstar/blog/files/4922167/shades-intel.zip)
