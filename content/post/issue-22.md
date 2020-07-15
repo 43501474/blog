@@ -7,7 +7,7 @@ comments: false
 
 > created_date: 2020-07-12T04:50:33+08:00
 
-> update_date: 2020-07-15T00:09:20+08:00
+> update_date: 2020-07-15T00:11:39+08:00
 
 > comment_url: https://github.com/ferstar/blog/issues/22
 
@@ -30,4 +30,4 @@ comments: false
 
 升级路径：10.13.6 -> Mojave Patcher -> 10.14.6
 
-EFI链接`亲测最高可支持到10.15.5`：https://github.com/ferstar/blog/files/4908021/EFI_X220.zip
+EFI链接`亲测最高可支持到10.15.5，乞丐网卡驱动正常`：https://github.com/ferstar/blog/files/4908021/EFI_X220.zip
